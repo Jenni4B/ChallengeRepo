@@ -1,0 +1,56 @@
+// Cybersecurity Job Levels
+const jobs = "Cyber Security Jobs";
+
+const entryLevel = [];
+const midLevel = [];
+const seniorLevel = [];
+
+// Experience level with associated job titles and openings
+const experienceLevel = {
+    'Cybersecurity Analyst': 32000,
+    'Threat Intelligence Analyst': 15000,
+    'Cloud Security Engineer': 25000,
+    'Incident Response Manager': 18000,
+    'Governance & Compliance Specialist': 10000,
+    'Security Architect': 8000,
+};
+
+let infoBox; // Define infoBox globally
+
+// Function to display each role and its number of openings
+function showRoles() {
+    if (!infoBox) { // Check if infoBox does not already exist
+        infoBox = document.createElement('div');
+        infoBox.id = 'infoBox'; // Assign an ID to infoBox
+        infoBox.innerHTML = `
+            <h3>${jobs}</h3>
+            <ul>
+                ${Object.entries(experienceLevel).map(([role, openings]) =>
+                    `<li>${role}: ${openings} openings</li>`
+                ).join('')}
+            </ul>
+        `;
+        document.body.appendChild(infoBox);
+        roleButton.textContent = 'Hide Roles';
+    }
+}
+
+function hideRoles() {
+    if (infoBox) { // Check if infoBox exists before removing
+        infoBox.remove();
+        infoBox = null; // Reset infoBox reference
+        roleButton.textContent = 'Show Open Cybersecurity Roles';
+    }
+}
+
+// Toggle function to show or hide roles
+function toggleRoles() {
+    if (infoBox) {
+        hideRoles();
+    } else {
+        showRoles();
+    }
+}
+
+const roleButton = document.getElementById('roleButton');
+roleButton.addEventListener('click', toggleRoles);
