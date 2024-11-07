@@ -1,10 +1,6 @@
 // Cybersecurity Job Levels
 const jobs = "Cyber Security Jobs";
 
-const entryLevel = [];
-const midLevel = [];
-const seniorLevel = [];
-
 // Experience level with associated job titles and openings
 const experienceLevel = {
     'Cybersecurity Analyst': 32000,
@@ -21,7 +17,7 @@ let infoBox; // Define infoBox globally
 function showRoles() {
     if (!infoBox) { // Check if infoBox does not already exist
         infoBox = document.createElement('div');
-        infoBox.id = 'infoBox'; // Assign an ID to infoBox
+        infoBox.id = 'infoBox'; // Assign an ID 
         infoBox.innerHTML = `
             <h3>${jobs}</h3>
             <ul>
@@ -36,7 +32,7 @@ function showRoles() {
 }
 
 function hideRoles() {
-    if (infoBox) { // Check if infoBox exists before removing
+    if (infoBox) { // Check if infoBox exists
         infoBox.remove();
         infoBox = null; // Reset infoBox reference
         roleButton.textContent = 'Show Open Cybersecurity Roles';
