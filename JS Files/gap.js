@@ -35,7 +35,14 @@ function findLargestOpenings(data){
 
     console.log("data => ", data)
 }
+function loadArray(data){
+    console.log("Running findLargestOpenings. Finding the XP lvl with the highest" + 
+        " gap and returns it's name and gap value"
+    )
 
-findLargestOpenings(jobData);
+    console.log("data => ", data)
+}
+
+loadArray(jobData);
 
 

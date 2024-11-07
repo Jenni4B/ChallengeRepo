@@ -1,8 +1,8 @@
 // Cybersecurity Job Levels
-const jobs = "Cyber Security Jobs";
+const titleOfPage = "Cyber Security Jobs";
 
 // Experience level with associated job titles and openings
-const experienceLevel = {
+const careers = {
     'Cybersecurity Analyst': 32000,
     'Threat Intelligence Analyst': 15000,
     'Cloud Security Engineer': 25000,
@@ -19,9 +19,9 @@ function showRoles() {
         infoBox = document.createElement('div');
         infoBox.id = 'infoBox'; // Assign an ID 
         infoBox.innerHTML = `
-            <h3>${jobs}</h3>
+            <h3>${titleOfPage}</h3>
             <ul>
-                ${Object.entries(experienceLevel).map(([role, openings]) =>
+                ${Object.entries(careers).map(([role, openings]) =>
                     `<li>${role}: ${openings} openings</li>`
                 ).join('')}
             </ul>
