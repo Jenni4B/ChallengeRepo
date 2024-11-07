@@ -15,18 +15,18 @@
 const jobData = [
     {
         level: "Entry Level",
-        talent: 400,
-        openings: 500
+        talent: 400000,
+        openings: 500000
     },
     {
         level: "Mid Level",
-        talent: 300,
-        openings: 500
+        talent: 300000,
+        openings: 500000
     },
     {
         level: "Senior Level",
-        talent: 300,
-        openings: 450
+        talent: 300000,
+        openings: 450000
     }
 ];
 
