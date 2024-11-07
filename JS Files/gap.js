@@ -1,6 +1,16 @@
+/*
+ *
+ * Write a function that finds the experience level with 
+ * the highest gap and returns its name and gap value
+ * 
+ * Cybersecurity Talent-Gap Analysis:
+ * 
+ * Total Talent Gap: 300,000
+ * 
+ * Highest Shortage: Mid-level with a gap of 200,000
+ */
 
-
-// Array with XP lvl --> job openings ---> talent availiable
+// Array with XP level --> job openings ---> talent available
 
 const jobData = [
     {
@@ -11,7 +21,7 @@ const jobData = [
     {
         level: "Mid Level",
         talent: 300,
-        openings: 450
+        openings: 500
     },
     {
         level: "Senior Level",
@@ -20,37 +30,34 @@ const jobData = [
     }
 ];
 
+function findLargestOpenings(data) {
+    console.log("Running findLargestOpenings. Finding the XP level with the highest gap and returning its name and gap value");
 
-/*
- *
- * Write a function that finds the experience level with 
- * the highest gap and returns its name and gap value
- * 
- * Using the data from Mon. Wed. & Thurs, create the expected output
- * 
- * Cybersecurity Talent-Gap Analysis:
- * 
- * Total Talent Gap: 300,000
- * 
- * Highest Shortage: Mid-level with a gap of 200,000
- * 
- */
+    let highestGapLevel = null;
+    let highestGapValue = 0;
+    let totalGap = 0
 
-function findLargestOpenings(data){
-    console.log("Running findLargestOpenings. Finding the XP lvl with the highest" + 
-        " gap and returns it's name and gap value"
-    )
+    data.forEach(job => {
+        const gap = job.openings - job.talent;
+        totalGap = job.openings + totalGap
 
-    console.log("data => ", data)
+        if (gap > highestGapValue) {
+            highestGapValue = gap;
+            highestGapLevel = job.level;
+        }
+    });
+
+    return { level: highestGapLevel, levelGap: highestGapValue, total: totalGap};
 }
 
-function loadArray(data){
-    console.log("Running loadArray. Outputs array data into the console"
-    )
-
-    console.log("data => ", data)
+function loadArray(data) {
+    console.log("Running loadArray. Outputting array data to the console");
+    console.log("data =>", data);
 }
 
 loadArray(jobData);
+const result = findLargestOpenings(jobData);
 
-
+console.log('CyberSecurity Talent-Gap Analysis:');
+console.log(`Total Talent Gap: ${result.total}`);
+console.log(`Highest Shortage: ${result.level} with a gap of ${result.levelGap}`);
